@@ -1,0 +1,45 @@
+SIMPLE_SHELL
+
+NAME
+
+		Shell — command interpreter
+
+SYNOPSIS
+
+	./simple_shell
+
+
+DESCRIPTION
+
+	The shell is a command-line interface enabling the user to interact with a computer's operating system. It acts as a layer of abstraction between the user and the operating system kernel, enabling the user to execute commands, launch programs, navigate directories, manage files and processes, and automate tasks using scripts.
+
+	The shell is a powerful tool for interacting with a command-line operating system, enabling users to execute commands, launch programs, navigate directories, manage files and processes, and automate tasks.
+
+OVERVIEW
+
+	The command interpreter reads lines from a file or terminal, interprets them and generally executes other commands. It is the program that runs when a user logs on to the system.
+
+	It incorporates many features to facilitate interactive use, and has the advantage that the interpretation language is common to both interactive and non-interactive use (shell scripts).
+
+
+INVOCATION
+
+	For now, our function doesn't take any arguments, so you can only invoke by name : ./simple_shell.
+
+USE AND EXAMPLE
+
+	$ ./simple_shell
+	$ ls
+
+	barbie_j	env-main.c	exec.c	fork.c	pid.c	ppid.c	prompt	prompt.c	shell_0.3	stat	test_scripting.sh	wait.c
+	env-environ.c	exec	fork	mypid	ppid	printenv	promptc	shell	shell.c	stat.c	wait
+
+
+
+FILES
+
+	/holbertonschool-simple_shell/
+
+AUTHORS
+
+	Yannick Mottais, Yacine Bourhlef
