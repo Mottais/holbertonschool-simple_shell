@@ -77,12 +77,18 @@ _List of authorized functions :_
 
 _Interactive :_
 
-		./hsh
+		./simple_shell
 		$ ls
+
+		barbie_j	env-main.c	exec.c	fork.c	pid.c	ppid.c	prompt	prompt.c	shell_0.3	stat	test_scripting.sh	wait.c
+		env-environ.c	exec	fork	mypid	ppid	printenv	promptc	shell	shell.c	stat.c	wait
 
 _Non-interactive :_
 
-		echo "/bin/ls" | ./hsh
+		echo "/bin/ls" | ./simple_shell
+
+		barbie_j	env-main.c	exec.c	fork.c	pid.c	ppid.c	prompt	prompt.c	shell_0.3	stat	test_scripting.sh	wait.c
+		env-environ.c	exec	fork	mypid	ppid	printenv	promptc	shell	shell.c	stat.c	wait
 
 ### MAN PAGE
 
@@ -92,7 +98,7 @@ The command to use the man page is :
 
 ### CHECK MEMORY LEAKS
 
-	valgrind ./hsh
+	valgrind ./simple_shell
 
 ### AUTHORS
 
