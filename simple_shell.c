@@ -1,13 +1,18 @@
 #include "main.h"
-
+/**
+ * est_vide - controle si la chaine est vide ([espace] considéré vide)
+ *
+ *@user_input: chaine à controler
+ * Return: 1 si vide 0 sinon
+ */
 int est_vide(char *user_input)
 {
 	int i = 0;
 
-	while(user_input[i] == ' ')
+	while (user_input[i] == ' ')
 		i++;
 
-	return(user_input[i] == 0);
+	return (user_input[i] == 0);
 }
 
 /**
@@ -34,10 +39,6 @@ int main(int ac, char **av, char **env)
 	{
 		user_input[length - 1] = '\0'; /* remplace dernier caractère par \0*/
 
-if (est_vide(user_input))
-printf("Est vide \n");
-else
-printf("Pas vide \n");
 		if (length > 1 && !est_vide(user_input))
 		{
 			count_cmd++; /*compte nb de fois qu'une commande est éxé (pour msg err) */
