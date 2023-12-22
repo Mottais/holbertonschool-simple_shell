@@ -13,18 +13,20 @@ int _which(char **args, char **env)
 	char full_path[MAX_ARGS];
 	struct stat file_stat;
 
-	/* si args[0] (commande) est un exécutable (full_path/file) */
 	if ((stat(args[0], &file_stat) == 0) && S_ISREG(file_stat.st_mode))
 		return (1); /* un exécutable a été trouvé */
 
+	if (env == NULL)
+		return (0); /* pas d'éxé trouvé */
+
 	path = _getenv("PATH", env);/*récupère la variable PATH de l'environnement*/
-	/* qui est une liste de chemins séparés par des ':'*/
+
+	if (path == NULL)
+		return (0); /* pas d'éxé trouvé */
 
 	path_copy = strdup(path); /* duplication de path accessible en écriture */
 
 	jeton = strtok(path_copy, ":");
-	/* jeton pointe sur le début de path_copy */
-	/* et remplace le premier caractère ":" par le caractère de fin : '\0' */
 
 	while (jeton != NULL) /* jusqu'à la fin de path_copy */
 	{
