@@ -94,7 +94,7 @@ _Non-interactive :_
 
 The command to use the man page is :
 
-	man 
+	man ./simple_shell
 
 ### CHECK MEMORY LEAKS
 
