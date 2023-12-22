@@ -18,7 +18,6 @@ int execute_command(int cmd_trouv, char *args[], char **env,
 
 	if (cmd_trouv == 0) /* si aucun éxé trouvé */
 	{
-		/* msg err */
 		fprintf(stderr, "%s: %d: %s: not found\n", av_0, count_cmd, args[0]);
 		return (127); /* retour code err */
 	}
@@ -29,8 +28,8 @@ int execute_command(int cmd_trouv, char *args[], char **env,
 		/* si création processus enfant echoue */
 		if (pid == -1)
 		{
-			perror("Erreur lors du fork\n");
-			return (EXIT_FAILURE);
+			perror("fork");
+			return (-1);
 		}
 		/* processus enfant */
 		if (pid == 0)
@@ -52,5 +51,6 @@ int execute_command(int cmd_trouv, char *args[], char **env,
 			return (status);
 		}
 	}
-	return (0);
+	fprintf(stderr, "%s: %d: %s: not found\n", av_0, count_cmd, args[0]);
+	return (127); /*commit test*/
 }

@@ -16,8 +16,8 @@ int _which(char **args, char **env)
 	if ((stat(args[0], &file_stat) == 0) && S_ISREG(file_stat.st_mode))
 		return (1); /* un exécutable a été trouvé */
 
-	if (env == NULL)
-		return (0); /* pas d'éxé trouvé */
+/*	if (env == NULL)				commit test   */
+/*		return (0);  pas d'éxé trouvé           commit test   */
 
 	path = _getenv("PATH", env);/*récupère la variable PATH de l'environnement*/
 
