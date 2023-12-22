@@ -1,5 +1,15 @@
 #include "main.h"
 
+int est_vide(char *user_input)
+{
+	int i = 0;
+
+	while(user_input[i] == ' ')
+		i++;
+
+	return(user_input[i] == 0);
+}
+
 /**
  * main - function that prints '$' to standard output
  *
@@ -24,7 +34,11 @@ int main(int ac, char **av, char **env)
 	{
 		user_input[length - 1] = '\0'; /* remplace dernier caractère par \0*/
 
-		if (length > 1)
+if (est_vide(user_input))
+printf("Est vide \n");
+else
+printf("Pas vide \n");
+		if (length > 1 && !est_vide(user_input))
 		{
 			count_cmd++; /*compte nb de fois qu'une commande est éxé (pour msg err) */
 			args = args_dans_tableau(user_input);/*créer tableau avec args de input*/
